@@ -1,0 +1,9 @@
+if ( ${ADAPTIVE_RES_BUILD_AS_SHARED_LIBRARY} )
+    add_library( AR SHARED )
+    set_target_properties( AR PROPERTIES VERSION ${CMAKE_PROJECT_VERSION} SOVERSION ${ADAPTIVERESOLUTION_VERSION_RAW})
+    #set_target_properties( AR PROPERTIES POSITION_INDEPENDENT_CODE ON )
+else()
+    add_library( AR STATIC )
+endif()
+
+add_library(T8CODE_ADAPTIVE_RES::AR ALIAS AR)
